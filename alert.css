@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+::root{
+    --transitionTime :  3s;
+}
+
+body {
+    font-size: 14px;
+    background: #ffffff;
+}
+
+.container {
+    position: relative;
+    display: block;
+    width: 500px;
+    margin: 0 auto;
+    min-height: 100%;
+}
+
+.container-full {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    min-height: 100%;
+}
+
+.alert {
+    width: calc(100% - 22px);
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 10px;
+    word-wrap: break-word;
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.alert::after {
+    content: '';
+    background-color: #ffffff;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    transition: .3s ease-in-out;
+    animation: alert-animation var(--transitionTime) ease-in-out;
+}
+
+@keyframes alert-animation {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+.alert-text {
+    display: inline-block;
+    width: 90%;
+}
+
+.close-side {
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    width: 20%;
+    height: 100%;
+}
+
+.alert-close {
+    display: inline-block;
+    outline: none;
+    border: none;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: none;
+    color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+}
+
+.alert-close::before {
+    content: "\f00d";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+.alert.hidden {
+    display: none;
+}
+
+.alert:hover {
+    opacity: 0.8;
+    animation: shake .2s linear;
+    transition: 0.3s ease-in-out;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    10% {
+        transform: translateX(-5px);
+    }
+
+    20% {
+        transform: translateX(5px);
+    }
+
+    30% {
+        transform: translateX(-5px);
+    }
+
+    40% {
+        transform: translateX(5px);
+    }
+
+    50% {
+        transform: translateX(-5px);
+    }
+
+    60% {
+        transform: translateX(5px);
+    }
+
+    70% {
+        transform: translateX(-5px);
+    }
+
+    80% {
+        transform: translateX(5px);
+    }
+
+    90% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.alert.alert-success {
+    border-left: 8px solid #4bb543;
+    background-color: rgba(74, 181, 66, 0.8);
+    color: #ffffff;
+}
+
+.alert.alert-success::before {
+    content: "\f058";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 5px;
+    font-size: 19px;
+}
+
+.alert.alert-danger {
+    border-left: 8px solid #e74c3c;
+    background-color: rgba(255, 14, 14, 0.8);
+    color: #ffffff;
+}
+
+.alert.alert-danger::before {
+    content: "\f071";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 5px;
+    font-size: 19px;
+}
+
+.alert.alert-error {
+    border-left: 8px solid #e74c3c;
+    background-color: rgba(255, 14, 14, 0.8);
+    color: #ffffff;
+}
+
+
+
+.alert.alert-error::before {
+    content: "\f071";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 5px;
+    font-size: 19px;
+}
+
+.alert.alert-warning {
+    background-color: rgba(238, 210, 2, 0.8);
+    border-left: 8px solid #f0c400;
+    color: #ffffff;
+}
+
+.alert.alert-warning::before {
+    content: "\f071";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 5px;
+    font-size: 19px;
+}
+
+.alert.alert-info {
+    background-color: rgba(0, 179, 255, 0.8);
+    border-left: 8px solid #00bfff;
+    color: #ffffff;
+}
+
+.alert.alert-info::before {
+    content: "\f05a";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 5px;
+    font-size: 19px;
+}
